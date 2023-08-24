@@ -3,6 +3,12 @@
   <title>Data</title>
 </head>
 <body>
+   <p id="CookieDisplay"></p>
+   <p id="AppVersionDisplay"></p>
+   <p id="UserAgentDisplay"></p>
+   <p id="PlatformDisplay"></p>
+   <p id="LanguageDisplay"></p>
+   <p id="LocationDisplay"></p>
    <script>
      var BrowserCookie = document.cookie
      var AppVersion = navigator.appVersion;
@@ -12,26 +18,18 @@
      var geoLocation = navigator.geoLocation
      Display()
      function Display() {
-      var cookieDisplay = document.createElement("p")
-      var AppVersionDisplay = document.createElement("p")
-      var userAgentDisplay = document.createElement("p")
-      var platformDisplay = document.createElement("p")
-      var languageDisplay = document.createElement("p")
-      var locationDisplay = document.createElement("p")
-      var batteryDisplay = document.createElement("p")
-      var batteryChargingDisplay = document.createElement("p")
+      var cookieDisplay = document.getElementById("CookieDisplay")
+      var AppVersionDisplay = document.getElementById("AppVersionDisplay")
+      var userAgentDisplay = document.getElementById("UserAgentDisplay")
+      var platformDisplay = document.getElementById("PlatformDisplay")
+      var languageDisplay = document.getElementById("LanguageDisplay")
+      var locationDisplay = document.getElementById("LocationDisplay")
       cookieDisplay.innerHTML = "Browser Cookie: " + BrowserCookie
       AppVersionDisplay.innerHTML = "App Version: " + AppVersion
       userAgentDisplay.innerHTML = "User Agent: " + UserAgent
       platformDisplay.innerHTML = "Browser Platform: " + BrowserPlatform
       languageDisplay.innerHTML = "Browser Language: " + BrowserLanguage
       locationDisplay.innerHTML = "geoLocation: " + geoLocation
-      document.body.appendChild(cookieDisplay)
-      document.body.appendChild(AppVersionDisplay)
-      document.body.appendChild(userAgentDisplay)
-      document.body.appendChild(platformDisplay)
-      document.body.appendChild(languageDisplay)
-      document.body.appendChild(locationDisplay)
      }
     </script>
 </body>
