@@ -9,6 +9,7 @@
    <p id="PlatformDisplay"></p>
    <p id="LanguageDisplay"></p>
    <p id="LocationDisplay"></p>
+   <p id="DateDisplay"></p>
    <script>
      var BrowserCookie = document.cookie
      var AppVersion = navigator.appVersion;
@@ -16,6 +17,7 @@
      var BrowserPlatform = navigator.platform;
      var BrowserLanguage = navigator.language;
      var geoLocation = navigator.geoLocation
+     var date = new Date()
      Display()
      function Display() {
       var cookieDisplay = document.getElementById("CookieDisplay")
@@ -30,6 +32,13 @@
       platformDisplay.innerHTML = "Browser Platform: " + BrowserPlatform
       languageDisplay.innerHTML = "Browser Language: " + BrowserLanguage
       locationDisplay.innerHTML = "geoLocation: " + geoLocation
+      setInterval(UpdateDate, 0)
+     }
+     
+     function UpdateDate() {
+      var dateDisplay = document.getElementById("DateDisplay")
+      date = new Date()
+      dateDisplay.innerHTML = "Time: " + date
      }
     </script>
 </body>
